@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 
@@ -62,6 +61,11 @@
                             <img src="icon/rr_90.png" height="100%" alt="">
                         </span>
                     </div>
+                    <div class="b-header__item b-header__copy is-disabled" id="copy" title="Copy and Paste" mode="Copy and Paste" data-modes="editor noauth">
+                        <span class="b-icon b-header__icon">
+                            <img src="icon/copy.png" height="100%" alt="">
+                        </span>
+                    </div>
                 </div>
                 <div class="b-header__center">
                     <div class="b-header__switch">
@@ -94,7 +98,7 @@
             </header>
         </div>
         <div class="b-page__editor" id="editor">
-
+        
             <div class="workArea" id="wrapCanvas">
 
                 <canvas id="c"></canvas>
@@ -190,6 +194,4 @@
     <script src="lib/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
     <script src="js/main.js" type="text/javascript"></script>
 </body>
-
-
 </html>
