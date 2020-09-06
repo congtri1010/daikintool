@@ -87,7 +87,7 @@
                         var itemDaikin = '<div class="pane-affix__catalog-column is-2">\
                                             <a class="pane-affix__catalog-item item-texture is-shrink" id="freeRoomBtn">\
                                                 <div class="item-texture__image">\
-                                                    <img src="icon/daikin-us7.jpg" id="daikin-us7" alt="">\
+                                                    <img src="icon/daikin_indoor_cv.png" id="daikin-us7" alt="">\
                                                 </div>\
                                             </a>\
                                             <span><strong>'+res['products'][keys[i]]['Product']+'('+res['products'][keys[i]]['Quantity']+'X)</strong></span>\
@@ -95,7 +95,7 @@
                         var itemDaikinOutdoor = '<div class="pane-affix__catalog-column is-2">\
                                             <a class="pane-affix__catalog-item item-texture is-shrink" id="freeRoomBtn">\
                                                 <div class="item-texture__image">\
-                                                    <img src="icon/daikin_outdoor.png" id="daikin_outdoor" alt="">\
+                                                    <img src="icon/daikin_outdoor_cv.png" id="daikin_outdoor" alt="">\
                                                 </div>\
                                             </a>\
                                             <span><strong>'+res['products'][keys[i]]['Product']+'-Outdoor ('+res['products'][keys[i]]['Quantity']+'X)</strong></span>\
@@ -437,12 +437,12 @@ class Daikin {
                     "id": this.id
                 });
                 oImg.set({
-                    // 'left': l
-                    'left': 20
+                    'left': l
+                    // 'left': 120
                 });
                 oImg.set({
-                    // 'top': t
-                    'top': 20
+                    'top': t
+                    // 'top': 120
                 });
                 oImg.set({
                     "transparentCorners": false
@@ -513,6 +513,8 @@ function header_enable(){
 
 function makeLine(coords) {
     return new fabric.Line(coords, {
+        top: coords !== undefined ? coords[0] : 0, 
+        left: coords !== undefined ? coords[1] : 0,
         fill: 'blue',
         stroke: 'blue',
         strokeWidth: 5,
@@ -646,8 +648,9 @@ let line = [];
 $("#daikin-option").on('click', '#daikin-us7', ()=>{
     // old error code daikin_OutDoor.addImg($("#daikin_outdoor")[0])
     debugger;
-    
-    line.push(makeLine());    
+    let l = canvas.width / 2;
+    let t = canvas.height / 2;
+    line.push(makeLine([t, l, 5, 5]));    
 
     if(line.length > 1){
         line.shift()
